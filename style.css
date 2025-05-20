@@ -8,7 +8,7 @@
 
 body {
     justify-content: center;
-    background-color: #F5F6F8;
+    background-color: #D0D0D0;
     display: flex;
     gap: 20px;
     padding: 20px;
@@ -97,7 +97,7 @@ p {
     padding: 20px;
     border: 1px solid #164194;
     height: 550px;
-    background-color: #FFF6EA;
+    background-color: #FFFFFF;
 }
 
 #pontos {
