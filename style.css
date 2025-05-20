@@ -15,6 +15,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.autores{
+    padding: 12px;
+}
+
 /* Tipografia */
 h1 {
     font-size: 48px;
@@ -44,7 +48,7 @@ p {
 /* Tabuleiro de cartas */
 #tabuleiro {
     width: 700px;
-    height: 500px;
+    height: 45;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -81,7 +85,7 @@ p {
 
 /* Verso da carta */
 .verso {
-    background-color: #164194; /* Ação */
+    background-color: #164194; 
 }
 
 /* Placar */
@@ -91,9 +95,9 @@ p {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    border: 1px solid #D0D0D0;
-    height: 500px;
-    background-color: #FFFFFF;
+    border: 1px solid #164194;
+    height: 550px;
+    background-color: #FFF6EA;
 }
 
 #pontos {
