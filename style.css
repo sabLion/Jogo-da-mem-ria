@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    justify-content: center;
+    background-color: #F5F6F8;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Tipografia */
+h1 {
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 700;
+}
+h2 {
+    font-size: 34px;
+    line-height: 50px;
+    font-weight: 700;
+}
+h3 {
+    font-size: 28px;
+    line-height: 38px;
+    font-weight: 700;
+}
+h4 {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+}
+p {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+/* Tabuleiro de cartas */
+#tabuleiro {
+    width: 700px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Cartas */
+.memoria {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.memoria.flip {
+    transform: rotateY(180deg);
+}
+
+.frente, .verso {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    object-fit: cover;
+}
+
+/* Frente da carta*/
+.frente {
+    transform: rotateY(180deg);
+}
+
+/* Verso da carta */
+.verso {
+    background-color: #164194; /* Ação */
+}
+
+/* Placar */
+#placar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #D0D0D0;
+    height: 500px;
+    background-color: #FFFFFF;
+}
+
+#pontos {
+    font-size: 32px;
+    color: #164194;
+    font-weight: 700;
+}
+
+#erro {
+    font-size: 20px;
+    color: #C1272C;
+    font-weight: 700;
+}
+
+/* Labels */
+label {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* Botões */
+button {
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #C1272C;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #A02121;
+}
+
+button:disabled {
+    background-color: #F8BFC0;
+    color: white;
+    cursor: not-allowed;
+}
+
+input.error {
+    border: 1px solid #C1272C;
+    background-color: #FFF6F6;
+}
