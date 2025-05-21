@@ -26,10 +26,10 @@ function criarCartas() {
 
   let totalPares = 5;
   const nivel = dificuldade.value;
-  if (nivel === 'medio'){ 
-    totalPares = 8
-  } else if (nivel === 'dificil'){
-   totalPares = 10;
+  if (nivel === 'medio') {
+    totalPares = 8;
+  } else if (nivel === 'dificil') {
+    totalPares = 10;
   }
 
   for (let i = 0; i < totalPares; i++) {
@@ -45,6 +45,13 @@ function criarCartas() {
   }
 
   embaralharCartas();
+
+  // ✅ Aplica grid de 5 por linha somente no nível difícil
+  if (nivel === 'dificil') {
+    tabuleiro.classList.add('dificil');
+  } else {
+    tabuleiro.classList.remove('dificil');
+  }
 }
 
 function embaralharCartas() {
@@ -55,8 +62,8 @@ function embaralharCartas() {
 }
 
 function virarCarta() {
-  if (travarCartas || this.classList.contains("flip")){
-     return;
+  if (travarCartas || this.classList.contains("flip")) {
+    return;
   }
 
   this.classList.add("flip");
@@ -90,14 +97,7 @@ function pontuar() {
 
   const nivel = dificuldade.value;
 
-    let totalPares;
-    if (nivel === 'medio') {
-    totalPares = 8;
-    } else if (nivel === 'dificil') {
-    totalPares = 10;
-    } else {
-    totalPares = 5;
-    }
+  let totalPares = nivel === 'medio' ? 8 : nivel === 'dificil' ? 10 : 5;
 
   if (pontuacao === totalPares) {
     setTimeout(() => {
@@ -130,7 +130,6 @@ function desvirarCartas() {
 function resetarCartas() {
   [primeiraCarta, segundaCarta, travarCartas] = [null, null, false];
 }
-
 
 dificuldade.addEventListener("change", criarCartas);
 botaoReiniciar.addEventListener("click", criarCartas);

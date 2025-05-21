@@ -47,12 +47,19 @@ p {
 
 /* Tabuleiro de cartas */
 #tabuleiro {
-    width: 700px;
-    height: 45;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+#tabuleiro.dificil {
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  gap: 10px;
+  justify-content: center;
+  margin-left: 100px;
 }
 
 /* Cartas */
@@ -92,11 +99,12 @@ p {
 #placar {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 20px;
+    justify-content: flex-start;
+    gap: 10px;
     padding: 20px;
     border: 1px solid #164194;
-    height: 550px;
+    height: 600px;
+    weight: 400px; ;
     background-color: #FFFFFF;
 }
 
@@ -147,11 +155,8 @@ input.error {
 }
 
 .imagem-topo {
-  position: absolute;
-  top: 0;
-  left: 0; /*ou right: 0; se quiser no canto superior direito*/
-  width: 150px; 
-  height: auto;
-  margin: 10px; 
-  z-index: 1000; /*garante que fique por cima de outros elementos*/
+    width: 100px;
+    height: auto;
+    margin-bottom: 0px;
+    align-self: flex-start; /* garante alinhamento à esquerda no flex container */
 }
