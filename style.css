@@ -145,3 +145,13 @@ input.error {
     border: 1px solid #C1272C;
     background-color: #FFF6F6;
 }
+
+.imagem-topo {
+  position: absolute;
+  top: 0;
+  left: 0; /*ou right: 0; se quiser no canto superior direito*/
+  width: 150px; 
+  height: auto;
+  margin: 10px; 
+  z-index: 1000; /*garante que fique por cima de outros elementos*/
+}
