@@ -12,6 +12,7 @@ let pontuacao = 0;
 let quantidadeErros = 0;
 
 const modelos = document.querySelectorAll(".memoria");
+const somVirar = document.getElementById("somVirar"); // 🎵
 
 function criarCartas() {
   tabuleiro.innerHTML = '';
@@ -46,7 +47,6 @@ function criarCartas() {
 
   embaralharCartas();
 
-  // ✅ Aplica grid de 5 por linha somente no nível difícil
   if (nivel === 'dificil') {
     tabuleiro.classList.add('dificil');
   } else {
@@ -65,6 +65,10 @@ function virarCarta() {
   if (travarCartas || this.classList.contains("flip")) {
     return;
   }
+
+  // 🔊 Toca o som de virar carta
+  somVirar.currentTime = 0;
+  somVirar.play();
 
   this.classList.add("flip");
 
@@ -96,7 +100,6 @@ function pontuar() {
   resetarCartas();
 
   const nivel = dificuldade.value;
-
   let totalPares = nivel === 'medio' ? 8 : nivel === 'dificil' ? 10 : 5;
 
   if (pontuacao === totalPares) {
